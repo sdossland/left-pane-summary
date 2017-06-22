@@ -1,0 +1,63 @@
+.recipe-list-name-row {
+  height: 40px;
+  line-height: 40px;
+  margin: 1px 0;
+  font-size: 1.2em;
+}
+.recipe-list-name-row:hover {
+  cursor: pointer;
+  background-color: #f2f2f2;
+  border-bottom: 1px solid #e6e6e6;
+  border-top: 1px solid #e6e6e6;
+}
+.recipe-list-name {
+  display: inline-block;
+}
+.editDeleteBtns {
+  display: inline-block;
+  float: right;
+}
+.btn {
+  margin-bottom: 3px;
+}
+input[type="text"] {
+  border: none;
+}
+.prep-sum-col {
+  padding: 0;
+  text-align: center;
+  margin-left: -10px;
+}
+.vertical-line {
+  border-right: 1px solid #e6e6e6;
+  margin-right: 10px;
+}
+
+.input-prep {
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+}
+.prep-label, label {
+  font-weight: 100;
+  color: #8c8c8c;
+  margin-bottom: 5px;
+  display: block;
+}
+h4 {
+  margin-bottom: 0;
+}
+hr {
+  margin: 10px 0;
+}
+
+/*input[type=""]:not(:focus)*/
+
+/*@keyframes App-logo-spin {*/
+  /*from { transform: rotate(0deg); }*/
+  /*to { transform: rotate(360deg); }*/
+/*}*/
+/*.App-logo {*/
+  /*animation: App-logo-spin infinite 20s linear;*/
+  /*height: 80px;*/
+/*}*/
