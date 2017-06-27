@@ -11,7 +11,7 @@ class TableOfContents extends React.Component {
       hover: false,
       hoverIndex: '',
       show: false,
-      //key: ''
+      key: ''
     }
   }
   getOnMouseEnter = (hoverIndex) =>
@@ -39,7 +39,7 @@ class TableOfContents extends React.Component {
       this.props.deleteRecipe(index);
   };
   render() {
-    var recipeNames = this.props.recipes.map((recipe, index) => {
+    const recipeNames = this.props.recipes.map((recipe, index) => {
       return (
         <div className="row recipe-list-name-row" key={index} onMouseEnter={this.getOnMouseEnter(index)}
                                                               onMouseLeave={this.getOnMouseLeave}
@@ -56,18 +56,21 @@ class TableOfContents extends React.Component {
       )
     });
     return (
-      <div id="tableOfContents">
-        <div className={this.state.show ? 'col-md-4 col-xs-0' : 'col-md-4 col-md-offset-4 col-xs-12'}>
-          <div className="row">
-            <h2>Table of Contents</h2>
+      <div id="tableOfContents" className="row">
+          <div id="test1" className={this.state.show ? 'col-md-4 col-xs-0' : 'col-md-4 col-md-offset-4 col-xs-12'}>
+            <div className="row">
+              <h2>Table of Contents</h2>
+            </div>
+            <hr />
+            {recipeNames}
           </div>
-          <hr />
-          {recipeNames}
-        </div>
-        { this.state.show && <Recipe recipe={this.props.recipes[this.state.key]}
-                                     recipes={this.props.recipes}
-        />
-        }
+          { this.state.show ?
+            <div id="test2" className="col-md-8 col-xs-12" >
+              <Recipe recipe={this.props.recipes[this.state.key]}
+                      recipes={this.props.recipes}
+              />
+            </div>
+            : <div className="col-md-4 col-xs-0"></div> }
       </div>
     );
   }

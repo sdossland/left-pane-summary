@@ -31,6 +31,7 @@ input[type="text"] {
 .vertical-line {
   border-right: 1px solid #e6e6e6;
   margin-right: 10px;
+  cursor: pointer;
 }
 
 .input-prep {
@@ -44,11 +45,77 @@ input[type="text"] {
   margin-bottom: 5px;
   display: block;
 }
-h4 {
-  margin-bottom: 0;
+
+.closeModal {
+  display: inline-block;
+  float: right;
+  cursor: pointer;
 }
-hr {
-  margin: 10px 0;
+/*Modal*/
+.modal {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+  text-align: left;
+}
+.modal-title {
+  display: inline-block;
+}
+/* Modal Content*/
+.modal-content {
+  background-color: #fff;
+  border: 1px solid #423d3b;
+  margin: 10% auto;
+  padding: 20px;
+  max-width: 400px;
+}
+.modal-input {
+  margin-bottom: 10px;
+}
+.save-btn {
+  margin-right: 10px;
+}
+.steps {
+  margin-top: 1.2em;
+}
+.steps.col-xs {
+  padding: 0;
+}
+.step-number {
+  color: #8c8c8c;
+  font-size: 1.7em;
+  border: 1px solid #8c8c8c;
+  border-radius: 50%;
+  width: 1.5em;
+  display: inline-block;
+  text-align: center;
+}
+.step {
+  display: inline-block;
+  padding-left: 1.1em;
+  margin-bottom: 1.1em;
+  border: none;
+  resize: none;
+}
+#test1 {
+  -webkit-transition: margin 0.5s ease;
+  -moz-transition: margin 0.5s ease;
+  -o-transition: margin 0.5s ease;
+  transition: margin 0.5s ease;
+}
+/*#test2 {*/
+  /*opacity: 0;*/
+/*}*/
+#test2 {
+  -webkit-transition: width 0.5s, opacity 0s;
+  -moz-transition: width 0.5s, opacity 0s;
+  -o-transition: width 0.5s, opacity 0s;
+  transition: width 0.5s, opacity 0s;
 }
 
 /*input[type=""]:not(:focus)*/
