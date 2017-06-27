@@ -13,12 +13,12 @@ var recipes = [{
   //show: false
 }, {
   id: 1,
-  name: 'Lorem ipsum',
+  name: 'test',
   prepTime: 10,
   cookTime: 10,
   servings: 2,
   ingredients: ['Lorem', 'ipsum'],
-  preparation: ['Lorem', 'ipsum...'],
+  steps: ['Lorem', 'ipsum...'],
   //show: false
 }, {
   id: 2,
@@ -27,7 +27,7 @@ var recipes = [{
   cookTime: 10,
   servings: 2,
   ingredients: ['Lorem', 'ipsum'],
-  preparation: ['Lorem', 'ipsum...'],
+  steps: ['Lorem', 'ipsum...'],
   //show: false
 }];
 
