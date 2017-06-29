@@ -10,12 +10,33 @@
   border-bottom: 1px solid #e6e6e6;
   border-top: 1px solid #e6e6e6;
 }
+
+.triangle-right {
+  display: inline-block;
+  float: right;
+  width: 0;
+  height: 0;
+  margin-right: -15px;
+  border-top: 20px solid transparent;
+  border-left: 15px solid #f2f2f2;
+  border-bottom: 20px solid transparent;
+}
+
+.recipe-list-name-row-focus {
+  background-color: #f2f2f2;
+}
 .recipe-list-name {
   display: inline-block;
 }
-.editDeleteBtns {
+.float-right {
   display: inline-block;
   float: right;
+}
+.editDeleteBtns {
+  display: inline-block;
+  float: left;
+  /*position: relative;*/
+  /*z-index: -1;*/
 }
 .btn {
   margin-bottom: 3px;
@@ -102,20 +123,17 @@ input[type="text"] {
   border: none;
   resize: none;
 }
-#test1 {
+#recipeList {
   -webkit-transition: margin 0.5s ease;
   -moz-transition: margin 0.5s ease;
   -o-transition: margin 0.5s ease;
   transition: margin 0.5s ease;
 }
-/*#test2 {*/
-  /*opacity: 0;*/
-/*}*/
-#test2 {
-  -webkit-transition: width 0.5s, opacity 0s;
-  -moz-transition: width 0.5s, opacity 0s;
-  -o-transition: width 0.5s, opacity 0s;
-  transition: width 0.5s, opacity 0s;
+#recipe {
+  -webkit-transition: width 0.5s;
+  -moz-transition: width 0.5s;
+  -o-transition: width 0.5s;
+  transition: width 0.5s;
 }
 
 /*input[type=""]:not(:focus)*/
