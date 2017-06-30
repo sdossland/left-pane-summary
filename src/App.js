@@ -52,12 +52,42 @@ class App extends React.Component {
     recipes.splice(key, 1);
     this.setState({ recipes })
   };
+
+  // getOnPrepTimeChange = (key) => (e) => {
+  //   var recipes = this.state.recipes.slice();
+  //   var recipe = recipes[key];
+  //   recipe.prepTime = e.target.value;
+  //   this.setState({ recipes })
+  // };
+  handlePrepTimeSave = (key) =>
+    (newPrepTime) => {
+      var recipes = this.state.recipes.slice();
+      var recipe = recipes[key];
+      recipe.prepTime = newPrepTime;
+      this.setState({ recipes })
+  };
+  handleCookTimeSave = (key) =>
+    (newCookTime) => {
+      var recipes = this.state.recipes.slice();
+      var recipe = recipes[key];
+      recipe.cookTime = newCookTime;
+      this.setState({ recipes })
+  };
+  getOnServingsChange = (key) => (e) => {
+    var recipes = this.state.recipes.slice();
+    var recipe = recipes[key];
+    recipe.servings = e.target.value;
+    this.setState({ recipes })
+  };
   render() {
     return (
       <div className="container-fluid">
-        {/*<div className="col-xs-12">*/}
-          <TableOfContents recipes={this.state.recipes} deleteRecipe={this.deleteRecipe} />
-        {/*</div>*/}
+        <TableOfContents recipes={this.state.recipes}
+                         deleteRecipe={this.deleteRecipe}
+                         handlePrepTimeSave={this.handlePrepTimeSave}
+                         handleCookTimeSave={this.handleCookTimeSave}
+                         getOnServingsChange={this.getOnServingsChange}
+        />
       </div>
     );
   }
