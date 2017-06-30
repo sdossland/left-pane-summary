@@ -62,7 +62,7 @@ class TableOfContents extends React.Component {
     });
     return (
       <div id="tableOfContents" className="row">
-          <div id="recipeList" className={this.state.show ? 'col-md-4 col-xs-0' : 'col-md-4 col-md-offset-4 col-xs-12'}>
+          <div id="recipeList" className={this.state.show ? 'col-md-4 col-xs-0 toc-after' : 'col-md-4 col-md-offset-4 col-xs-12 toc-before'}>
             <div className="row">
               <h2>Table of Contents</h2>
             </div>
@@ -72,7 +72,10 @@ class TableOfContents extends React.Component {
           { typeof this.state.key !== 'undefined' && this.state.show ?
             <div id="recipe" className="col-md-8 col-xs-12" >
               <Recipe recipe={this.props.recipes[this.state.key]}
-                      recipes={this.props.recipes}
+                      //recipes={this.props.recipes}
+                      handlePrepTimeSave={this.props.handlePrepTimeSave(this.state.key)}
+                      handleCookTimeSave={this.props.handleCookTimeSave(this.state.key)}
+                      servingsChange={this.props.getOnServingsChange(this.state.key)}
               />
             </div>
             : <div className="col-md-4 col-xs-0"></div> }

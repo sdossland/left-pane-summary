@@ -7,10 +7,12 @@
 .recipe-list-name-row:hover {
   cursor: pointer;
   background-color: #f2f2f2;
-  border-bottom: 1px solid #e6e6e6;
-  border-top: 1px solid #e6e6e6;
+  border-bottom: 1px solid #ccc;
+  border-top: 1px solid #ccc;
 }
-
+.recipe-list-name-row-focus {
+  background-color: #f9f9f9;
+}
 .triangle-right {
   display: inline-block;
   float: right;
@@ -18,13 +20,10 @@
   height: 0;
   margin-right: -15px;
   border-top: 20px solid transparent;
-  border-left: 15px solid #f2f2f2;
+  border-left: 15px solid #f9f9f9;
   border-bottom: 20px solid transparent;
 }
 
-.recipe-list-name-row-focus {
-  background-color: #f2f2f2;
-}
 .recipe-list-name {
   display: inline-block;
 }
@@ -50,7 +49,7 @@ input[type="text"] {
   margin-left: -10px;
 }
 .vertical-line {
-  border-right: 1px solid #e6e6e6;
+  border-right: 1px solid #ccc;
   margin-right: 10px;
   cursor: pointer;
 }
@@ -59,6 +58,8 @@ input[type="text"] {
   width: 100%;
   box-sizing: border-box;
   text-align: center;
+  background: none;
+  cursor: pointer;
 }
 .prep-label, label {
   font-weight: 100;
@@ -119,22 +120,47 @@ input[type="text"] {
 .step {
   display: inline-block;
   padding-left: 1.1em;
-  margin-bottom: 1.1em;
   border: none;
   resize: none;
+  cursor: pointer;
+}
+.row-step {
+  margin-bottom: 1.1em;
+}
+.toc-before {
+  background-color: #f9f9f9;
+  box-shadow: 0 0 11px #a6a6a6;
+}
+.toc-after {
+  background-color: #fff;
 }
 #recipeList {
-  -webkit-transition: margin 0.5s ease;
-  -moz-transition: margin 0.5s ease;
-  -o-transition: margin 0.5s ease;
-  transition: margin 0.5s ease;
+  -webkit-transition: margin 0.5s ease, background-color 0.5s ease;
+  -moz-transition: margin 0.5s ease, background-color 0.5s ease;
+  -o-transition: margin 0.5s ease, background-color 0.5s ease;
+  transition: margin 0.5s ease, background-color 0.5s ease;
+  min-height: 100vh;
 }
 #recipe {
   -webkit-transition: width 0.5s;
   -moz-transition: width 0.5s;
   -o-transition: width 0.5s;
   transition: width 0.5s;
+  background-color: #f9f9f9;
+  min-height: 100vh;
+  border-left: 1px solid #ccc;
+  padding: 0;
 }
+.recipe-content {
+  padding: 0 15px 0 30px;
+}
+
+img {
+  width: 100%;
+  max-height: 325px;
+}
+
+
 
 /*input[type=""]:not(:focus)*/
 
