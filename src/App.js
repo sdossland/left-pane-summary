@@ -52,13 +52,6 @@ class App extends React.Component {
     recipes.splice(key, 1);
     this.setState({ recipes })
   };
-
-  // getOnPrepTimeChange = (key) => (e) => {
-  //   var recipes = this.state.recipes.slice();
-  //   var recipe = recipes[key];
-  //   recipe.prepTime = e.target.value;
-  //   this.setState({ recipes })
-  // };
   handlePrepTimeSave = (key) =>
     (newPrepTime) => {
       var recipes = this.state.recipes.slice();

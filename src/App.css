@@ -1,10 +1,10 @@
-.recipe-list-name-row {
-  height: 40px;
-  line-height: 40px;
+.recipe-list-name-row, .add-new {
+  height: 42px;
+  line-height: 42px;
   margin: 1px 0;
   font-size: 1.2em;
 }
-.recipe-list-name-row:hover {
+.recipe-list-name-row:hover, .add-new:hover {
   cursor: pointer;
   background-color: #f2f2f2;
   border-bottom: 1px solid #ccc;
@@ -12,6 +12,29 @@
 }
 .recipe-list-name-row-focus {
   background-color: #f9f9f9;
+}
+.add-new {
+  /*vertical-align: top;*/
+  height: 44px;
+  text-align: center;
+}
+.add-new:hover {
+  color: #0099e6;
+  /*font-weight: 700;*/
+}
+.add-new-plus {
+  font-size: 1.7em;
+  border: 1px solid;
+  border-radius: 50%;
+  width: 1.5em;
+  display: inline-block;
+  text-align: center;
+  margin-right: 5px;
+}
+.add-new p {
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 5px;
 }
 .triangle-right {
   display: inline-block;
@@ -160,6 +183,22 @@ img {
   max-height: 325px;
 }
 
+
+.new-recipe-modal-content {
+  background-color: #fff;
+  border: 1px solid #423d3b;
+  margin: 10% auto;
+  padding: 20px;
+  max-width: 900px;
+}
+.form-label {
+  font-size: 16px;
+  color: #333;
+}
+.ingredient-title {
+  display: inline-block;
+  padding-right: 5px;
+}
 
 
 /*input[type=""]:not(:focus)*/

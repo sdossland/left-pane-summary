@@ -3,6 +3,7 @@
  */
 import React from 'react';
 import Recipe from './Recipe';
+import NewRecipe from './NewRecipe';
 
 class TableOfContents extends React.Component {
   constructor(props) {
@@ -11,7 +12,8 @@ class TableOfContents extends React.Component {
       hover: false,
       hoverIndex: '',
       show: false,
-      key: ''
+      key: '',
+      showNewRecipeModal: false
     }
   }
   getOnMouseEnter = (hoverIndex) =>
@@ -38,6 +40,16 @@ class TableOfContents extends React.Component {
     () => {
       this.props.deleteRecipe(index);
   };
+  openNewRecipeModal = () => {
+    this.setState({
+      showNewRecipeModal: true
+    })
+  };
+  closeNewRecipeModal = () => {
+    this.setState({
+      showNewRecipeModal: false
+    })
+  };
   render() {
     const recipeNames = this.props.recipes.map((recipe, index) => {
       return (
@@ -45,7 +57,7 @@ class TableOfContents extends React.Component {
                                                               onMouseLeave={this.getOnMouseLeave}
                                                               onClick={this.viewRecipe(index)}
         >
-          <p className="recipe-list-name">{recipe.name}</p>
+          <p className="recipe-list-name" title="Click to view details">{recipe.name}</p>
           <div className="float-right">
           { this.state.hoverIndex === index && this.state.hover ?
             <div className="editDeleteBtns">
@@ -68,7 +80,19 @@ class TableOfContents extends React.Component {
             </div>
             <hr />
             {recipeNames}
+            <div className="row add-new" onClick={this.openNewRecipeModal}>
+              <div className="add-new-plus">
+                <span>+</span>
+              </div>
+              <p title="Click to add new">Add new</p>
+            </div>
           </div>
+          { this.state.showNewRecipeModal ?
+            <NewRecipe showNewRecipeModal={this.state.showNewRecipeModal}
+                       recipes={this.props.recipes}
+                       closeNewRecipeModal={this.closeNewRecipeModal}
+            />
+          : null }
           { typeof this.state.key !== 'undefined' && this.state.show ?
             <div id="recipe" className="col-md-8 col-xs-12" >
               <Recipe recipe={this.props.recipes[this.state.key]}
